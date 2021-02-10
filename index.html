@@ -42,10 +42,11 @@
           v-bind:class="['tab-button', { active: currentTab === tab }]"
           v-on:click="currentTab = tab"
         >
-          {{ tab }} <!-- template: "<div>treść home component</div>" -->
+          {{ tab }} <!-- tab === -->
         </button>
 
 			<div v-bind:is="currentTabComponent" class="tab"></div>
+			<!-- template: "<div>treść home component</div>" -->
 			<!-- ----------- -->
 		</div>
 	</div>
