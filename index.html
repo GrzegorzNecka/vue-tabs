@@ -42,7 +42,7 @@
           v-bind:class="['tab-button', { active: currentTab === tab }]"
           v-on:click="currentTab = tab"
         >
-          {{ tab }} <!-- tab === -->
+          {{ tab }} <!-- renderuje 3 taby-->
         </button>
 
 			<div v-bind:is="currentTabComponent" class="tab"></div>

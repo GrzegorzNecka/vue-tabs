@@ -19,7 +19,7 @@ new Vue({
   computed: {
     currentTabComponent: function() {
       return "tab-" + this.currentTab.toLowerCase();
-      //zwraca zawartość komponentu tab-nazwa
+      // zwraca zawartość komponentu tab-nazwa
     }
   }
 });
