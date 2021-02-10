@@ -1,17 +1,17 @@
 import Vue from "vue";
 
 Vue.component("tab-home", {
-  template: "<div>Home component</div>"
+  template: "<div>treść home component</div>"
 });
 Vue.component("tab-posts", {
-  template: "<div>Posts component</div>"
+  template: "<div>treść posts component</div>"
 });
 Vue.component("tab-archive", {
-  template: "<div>Archive component</div>"
+  template: "<div>treść archive component</div>"
 });
 
 new Vue({
-  el: "#dynamic-component-demo",
+  el: "#app",
   data: {
     currentTab: "Home",
     tabs: ["Home", "Posts", "Archive"]

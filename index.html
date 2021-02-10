@@ -1,52 +1,54 @@
 <html>
-  <head>
-    <title>Dynamic Components Example</title>
-    <link
-      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <style>
-      .tab-button {
-        padding: 6px 10px;
-        border-top-left-radius: 3px;
-        border-top-right-radius: 3px;
-        border: 1px solid #ccc;
-        cursor: pointer;
-        background: #f0f0f0;
-        margin-bottom: -1px;
-        margin-right: -1px;
-      }
-      .tab-button:hover {
-        background: #e0e0e0;
-      }
-      .tab-button.active {
-        background: #e0e0e0;
-      }
-      .tab {
-        border: 1px solid #ccc;
-        padding: 10px;
-        background: white;
-      }
-    </style>
-  </head>
 
-  <body class="h-screen">
-    <div id="app" class="h-screen flex justify-center items-center bg-gray-900">
-      <!-- ----------- -->
-      <div id="dynamic-component-demo" class="demo">
-        <button
+<head>
+	<title>Dynamic Components Example</title>
+	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<style>
+		.tab-button {
+			padding: 6px 10px;
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+			border: 1px solid #ccc;
+			cursor: pointer;
+			background: #f0f0f0;
+			margin-bottom: -1px;
+			margin-right: -1px;
+		}
+
+		.tab-button:hover {
+			background: #e0e0e0;
+		}
+
+		.tab-button.active {
+			background: #e0e0e0;
+		}
+
+		.tab {
+			border: 1px solid #ccc;
+			padding: 10px;
+			background: white;
+		}
+	</style>
+</head>
+
+<body class="h-screen">
+	<div class="h-screen flex justify-center items-center bg-gray-900">
+		<!-- ----------- -->
+		<div id="app" class="demo">
+			<button
           v-for="tab in tabs"
           v-bind:key="tab"
           v-bind:class="['tab-button', { active: currentTab === tab }]"
           v-on:click="currentTab = tab"
         >
-          {{ tab }}
+          {{ tab }} <!-- template: "<div>treść home component</div>" -->
         </button>
 
-        <component v-bind:is="currentTabComponent" class="tab"></component>
-        <!-- ----------- -->
-      </div>
-    </div>
-  </body>
+			<div v-bind:is="currentTabComponent" class="tab"></div>
+			<!-- ----------- -->
+		</div>
+	</div>
+</body>
+
 </html>
